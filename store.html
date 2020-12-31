@@ -28,7 +28,7 @@
 						<a class="nav-link active">Товары<span class="sr-only">(Текущая страница)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Контакты</a>
+						<a class="nav-link" href="contact.html">Контакты</a>
 					</li>
 				</ul>
 				<span class="navbar-text">
@@ -53,7 +53,29 @@
 									<p style="font-weight: bold;">Цена: есть</p>
 								</div>
 								<div class="col">
-									<p align="center" style="font-weight: bold;"><button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">&#8212</button> 0 шт. <button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">+</button></p>
+
+									<p align="center" style="font-weight: bold;">
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="fstmns()">&#8212</button>
+										<input type="hidden" name="fstcnt" id="fstcnt" value="0">
+										<label for="fstcnt" id="fstcnttxt"> 0 шт. </label>
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="fstpls()">+</button>
+									</p>
+									<script type="text/javascript">
+										var count = 0;
+										var countOrigFst = document.getElementById('fstcnt');
+										function fstmns() {
+											if (count > 0) {
+											count--;
+											fstcnt.value = count;
+											document.getElementById('fstcnttxt').innerHTML = count + ' шт. ';
+											}
+										}
+										function fstpls () {
+											count++;
+											fstcnt.value = count;
+											document.getElementById('fstcnttxt').innerHTML = count + ' шт. ';
+										}
+									</script>
 								</div>
 							</div>
 						</div>
