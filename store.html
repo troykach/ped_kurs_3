@@ -39,6 +39,18 @@
 	</div>
 	<div class="container">
 		<div class="row">
+			<p>Выбери категорию, друг:</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<h2><a href="#fst" class="badge badge-secondary">Первый класс</a></h2>
+			</div>
+			<div class="col-sn-3">
+				<h2><a href="#snd" class="badge badge-secondary">Второй класс</a></h2>
+			</div>
+		</div>
+		<div class="row">
+			<a name="fst"></a>
 			<h1>Будующий первый класс товаров</h1>
 		</div>
 		<div class="row">
@@ -61,19 +73,19 @@
 										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="fstpls()">+</button>
 									</p>
 									<script type="text/javascript">
-										var count = 0;
+										var fstcount = 0;
 										var countOrigFst = document.getElementById('fstcnt');
 										function fstmns() {
-											if (count > 0) {
-											count--;
-											fstcnt.value = count;
-											document.getElementById('fstcnttxt').innerHTML = count + ' шт. ';
+											if (fstcount > 0) {
+											fstcount--;
+											fstcnt.value = fstcount;
+											document.getElementById('fstcnttxt').innerHTML = fstcount + ' шт. ';
 											}
 										}
 										function fstpls () {
-											count++;
-											fstcnt.value = count;
-											document.getElementById('fstcnttxt').innerHTML = count + ' шт. ';
+											fstcount++;
+											fstcnt.value = fstcount;
+											document.getElementById('fstcnttxt').innerHTML = fstcount + ' шт. ';
 										}
 									</script>
 								</div>
@@ -93,7 +105,28 @@
 									<p style="font-weight: bold;">Цена: нет</p>
 								</div>
 								<div class="col">
-									<p align="center" style="font-weight: bold;"><button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">&#8212</button> 0 шт. <button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">+</button></p>
+									<p align="center" style="font-weight: bold;">
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="scnmns ()">&#8212</button>
+										<input type="hidden" name="scncnt" id="scncnt" value="0">
+										<label for="scncnt" id="scncnttxt"> 0 шт. </label>
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="scnpls ()">+</button>
+									</p>
+									<script type="text/javascript">
+										var scncount = 0;
+										var countOrigScn= document.getElementById('scncnt');
+										function scnmns() {
+											if (scncount > 0) {
+											scncount--;
+											scncnt.value = scncount;
+											document.getElementById('scncnttxt').innerHTML =scncount + ' шт. ';
+											}
+										}
+										function scnpls () {
+											scncount++;
+											scncnt.value = scncount;
+											document.getElementById('scncnttxt').innerHTML = scncount + ' шт. ';
+										}
+									</script>
 								</div>
 							</div>
 						</div>
@@ -104,6 +137,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
+			<a name="snd"></a>
 			<h1>Будующий второй класс товаров</h1>
 		</div>
 		<div class="row">
@@ -118,7 +152,28 @@
 									<p style="font-weight: bold;">Цена: есть</p>
 								</div>
 								<div class="col">
-									<p align="center" style="font-weight: bold;"><button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">&#8212</button> 0 шт. <button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">+</button></p>
+									<p align="center" style="font-weight: bold;">
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="trdmns ()">&#8212</button>
+										<input type="hidden" name="trdcnt" id="trdcnt" value="0">
+										<label for="trdcnt" id="trdcnttxt"> 0 шт. </label>
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="trdpls ()">+</button>
+									</p>
+									<script type="text/javascript">
+										var trdcount = 0;
+										var countOrigTrd= document.getElementById('trdcnt');
+										function trdmns() {
+											if (trdcount > 0) {
+											trdcount--;
+											trdcnt.value = trdcount;
+											document.getElementById('trdcnttxt').innerHTML = trdcount + ' шт. ';
+											}
+										}
+										function trdpls () {
+											trdcount++;
+											trdcnt.value = trdcount;
+											document.getElementById('trdcnttxt').innerHTML = trdcount + ' шт. ';
+										}
+									</script>
 								</div>
 							</div>
 						</div>
@@ -136,7 +191,28 @@
 									<p style="font-weight: bold;">Цена: нет</p>
 								</div>
 								<div class="col">
-									<p align="center" style="font-weight: bold;"><button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">&#8212</button> 0 шт. <button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;">+</button></p>
+									<p align="center" style="font-weight: bold;">
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="frtmns ()">&#8212</button>
+										<input type="hidden" name="frtcnt" id="frtcnt" value="0">
+										<label for="frtcnt" id="frtcnttxt"> 0 шт. </label>
+										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="frtpls ()">+</button>
+									</p>
+									<script type="text/javascript">
+										var frtcount = 0;
+										var countOrigFrt= document.getElementById('frtcnt');
+										function frtmns() {
+											if (frtcount > 0) {
+											frtcount--;
+											frtcnt.value = frtcount;
+											document.getElementById('frtcnttxt').innerHTML = frtcount + ' шт. ';
+											}
+										}
+										function frtpls () {
+											frtcount++;
+											frtcnt.value = frtcount;
+											document.getElementById('frtcnttxt').innerHTML = frtcount + ' шт. ';
+										}
+									</script>
 								</div>
 							</div>
 						</div>
