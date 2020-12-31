@@ -12,7 +12,7 @@
 	<div class="container">
 	
 		<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Слыш, купи
+			<a class="navbar-brand" href="main.html">Слыш, купи
 			<font size="1">модный логотип</font>
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExpand" aria-controls="navbarExpand" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,14 +45,18 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<p>Количество заказов:</p>
+				<p id="value">Количество заказов: 0 шт. </p>
 			</div>
+			<script type="text/javascript">
+				var sum = parseInt(localStorage.getItem('fst')) + parseInt(localStorage.getItem('scn')) + parseInt(localStorage.getItem('trd')) + parseInt(localStorage.getItem('frt'));
+				document.getElementById('value').innerHTML = 'Количество заказов: ' + sum + ' шт.';
+			</script>
 			<div class="col">
 				<p>Сумма заказа:</p>
 			</div>
 		</div>
 		<div class="row" style="float: right;">
-			<button type="button" class="btn btn-dark">Оформить заказ</button>
+			<button onclick="document.location='kotik.html'" type="button" class="btn btn-dark">Оформить заказ</button>
 		</div>
 	</div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

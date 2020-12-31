@@ -12,7 +12,7 @@
 	<div class="container">
 	
 		<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Слыш, купи
+			<a class="navbar-brand" href="main.html">Слыш, купи
 			<font size="1">модный логотип</font>
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExpand" aria-controls="navbarExpand" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,10 +73,15 @@
 										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="fstpls()">+</button>
 									</p>
 									<script type="text/javascript">
-										var fstcount = 0;
+										var fstcount = localStorage.getItem('fst');
 										var countOrigFst = document.getElementById('fstcnt');
 										var lclfstcnt = 0;
 										var glcntfst = 0;
+										if (localStorage.getItem('fst')!=null)
+										{
+											document.getElementById('fstcnttxt').innerHTML = localStorage.getItem('fst') + ' шт. ';
+										}
+										
 										function fstmns() {
 											if (fstcount > 0) {
 											fstcount--;
@@ -86,7 +91,7 @@
 												if (key==('fst')) {
 													glcntfst = 1;
 													localStorage.setItem('fst', fstcount);
-													alert(localStorage.getItem('fst'));
+											//		alert(localStorage.getItem('fst'));
 													break
 												} 
 												}
@@ -94,7 +99,7 @@
 											if (glcntfst == 0) {
 												localStorage.setItem('fst', fstcount);
 											}
-											alert(localStorage.getItem('fst'));
+											//alert(localStorage.getItem('fst'));
 										}
 										
 									
@@ -102,6 +107,20 @@
 											fstcount++;
 											fstcnt.value = fstcount;
 											document.getElementById('fstcnttxt').innerHTML = fstcount + ' шт. ';
+											document.getElementById('fstcnttxt').innerHTML = fstcount + ' шт. ';
+											for (let key in localStorage) {
+												if (key==('fst')) {
+													glcntfst = 1;
+													localStorage.setItem('fst', fstcount);
+													//alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
+											
+											if (glcntfst == 0) {
+												localStorage.setItem('fst', fstcount);
+											}
+											//alert(localStorage.getItem('fst'));
 										}
 									</script>
 								</div>
@@ -128,19 +147,50 @@
 										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="scnpls ()">+</button>
 									</p>
 									<script type="text/javascript">
-										var scncount = 0;
+										var scncount = localStorage.getItem('scn');
 										var countOrigScn= document.getElementById('scncnt');
+										var glscncount = 0;
+										if (localStorage.getItem('scn')!=null)
+										{
+											document.getElementById('scncnttxt').innerHTML = localStorage.getItem('scn') + ' шт. ';
+										}
 										function scnmns() {
 											if (scncount > 0) {
 											scncount--;
 											scncnt.value = scncount;
 											document.getElementById('scncnttxt').innerHTML =scncount + ' шт. ';
 											}
+											for (let key in localStorage) {
+												if (key==('scn')) {
+													glscncount = 1;
+													localStorage.setItem('scn', scncount);
+													//alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
+											
+											if (glscncount == 0) {
+												localStorage.setItem('scn', scncount);
+											}
 										}
 										function scnpls () {
 											scncount++;
 											scncnt.value = scncount;
+											var glscncount = 0;
 											document.getElementById('scncnttxt').innerHTML = scncount + ' шт. ';
+											
+											for (let key in localStorage) {
+												if (key==('scn')) {
+													glscncount = 1;
+													localStorage.setItem('scn', scncount);
+													//alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
+											
+											if (glscncount == 0) {
+												localStorage.setItem('scn', scncount);
+											}
 										}
 									</script>
 								</div>
@@ -175,20 +225,51 @@
 										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="trdpls ()">+</button>
 									</p>
 									<script type="text/javascript">
-										var trdcount = 0;
+										var trdcount = localStorage.getItem('trd');
 										var countOrigTrd= document.getElementById('trdcnt');
+										var gltrdcount = 0;
+										if (localStorage.getItem('trd')!=null)
+										{
+											document.getElementById('trdcnttxt').innerHTML = localStorage.getItem('trd') + ' шт. ';
+										}
 										function trdmns() {
 											if (trdcount > 0) {
 											trdcount--;
 											trdcnt.value = trdcount;
 											document.getElementById('trdcnttxt').innerHTML = trdcount + ' шт. ';
+											for (let key in localStorage) {
+												if (key==('trd')) {
+													gltrdcount = 1;
+													localStorage.setItem('trd', trdcount);
+													//alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
+											
+											if (gltrdcount == 0) {
+												localStorage.setItem('trd', trdcount);
+											}
 											}
 										}
 										function trdpls () {
 											trdcount++;
 											trdcnt.value = trdcount;
+											var gltrdcount = 0;
 											document.getElementById('trdcnttxt').innerHTML = trdcount + ' шт. ';
-										}
+											for (let key in localStorage) {
+												if (key==('trd')) {
+													gltrdcount = 1;
+													localStorage.setItem('trd', trdcount);
+													//alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
+											
+											if (gltrdcount == 0) {
+												localStorage.setItem('trd', trdcount);
+											}
+
+											}
 									</script>
 								</div>
 							</div>
@@ -214,20 +295,51 @@
 										<button type="button" class="btn btn-outline-secondary" style="font-weight: bold; font-size: 15px;" onclick="frtpls ()">+</button>
 									</p>
 									<script type="text/javascript">
-										var frtcount = 0;
+										var frtcount = localStorage.getItem('frt');
 										var countOrigFrt= document.getElementById('frtcnt');
+										var glfrtcount = 0;
+										if (localStorage.getItem('frt')!=null)
+										{
+											document.getElementById('frtcnttxt').innerHTML = localStorage.getItem('frt') + ' шт. ';
+										}
 										function frtmns() {
 											if (frtcount > 0) {
 											frtcount--;
 											frtcnt.value = frtcount;
 											document.getElementById('frtcnttxt').innerHTML = frtcount + ' шт. ';
+											for (let key in localStorage) {
+												if (key==('frt')) {
+													glfrtcount = 1;
+													localStorage.setItem('frt', frtcount);
+													//alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
+											
+											if (glfrtcount == 0) {
+												localStorage.setItem('frt', frtcount);
+											}
 											}
 										}
 										function frtpls () {
 											frtcount++;
 											frtcnt.value = frtcount;
+											var glfrtcount = 0;
 											document.getElementById('frtcnttxt').innerHTML = frtcount + ' шт. ';
-										}
+											for (let key in localStorage) {
+												if (key==('frt')) {
+													glfrtcount = 1;
+													localStorage.setItem('frt', frtcount);
+													//alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
+											
+											if (glfrtcount == 0) {
+												localStorage.setItem('frt', frtcount);
+											}
+
+											}
 									</script>
 								</div>
 							</div>
