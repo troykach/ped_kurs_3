@@ -75,13 +75,29 @@
 									<script type="text/javascript">
 										var fstcount = 0;
 										var countOrigFst = document.getElementById('fstcnt');
+										var lclfstcnt = 0;
+										var glcntfst = 0;
 										function fstmns() {
 											if (fstcount > 0) {
 											fstcount--;
 											fstcnt.value = fstcount;
 											document.getElementById('fstcnttxt').innerHTML = fstcount + ' шт. ';
+											for (let key in localStorage) {
+												if (key==('fst')) {
+													glcntfst = 1;
+													localStorage.setItem('fst', fstcount);
+													alert(localStorage.getItem('fst'));
+													break
+												} 
+												}
 											}
+											if (glcntfst == 0) {
+												localStorage.setItem('fst', fstcount);
+											}
+											alert(localStorage.getItem('fst'));
 										}
+										
+									
 										function fstpls () {
 											fstcount++;
 											fstcnt.value = fstcount;
